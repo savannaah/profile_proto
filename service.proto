@@ -1,0 +1,62 @@
+syntax = "proto3";
+
+package permissionproto;
+
+message RequestHeader {
+    string token = 1;
+}
+
+message GetProfileRequest {
+    RequestHeader Header = 1;
+}
+
+message UpdateProfileRequest {
+    RequestHeader Header = 1;
+    string FirstName = 2;
+    string MiddleName = 3;
+    string LastName = 4;
+    string ContactEmail = 5;
+    string ContactMobile = 6;
+    string AddressStreet = 7;
+    string AddressCity = 8;
+    string AddressPostCode = 9;
+    string AddressState = 10;
+    string AddressCountry = 11;
+    string EmergencyContactFullName = 12;
+    string EmergencyContactRelationship = 13;
+    string EmergencyContactMobile = 14;
+}
+
+message ProfileResponse {
+    int32 statusCode = 1;
+    string message = 2;
+    message Data {
+        string Avatar = 1;
+        string Username = 2;
+        string FirstName = 3;
+        string MiddleName = 4;
+        string LastName = 5;
+        string ContactEmail = 6;
+        string ContactMobile = 7;
+        string AddressStreet = 8;
+        string AddressCity = 9;
+        string AddressPostCode = 10;
+        string AddressState = 11;
+        string AddressCountry = 12;
+        string EmployeeTittle = 13;
+        string EmployeeRole = 14;
+        repeated string Warehouses = 15;
+        string EmergencyContactFullName = 16;
+        string EmergencyContactRelationship = 17;
+        string EmergencyContactMobile = 18;
+        string Supervisor = 19;
+        string HiredDate = 20;
+        string Timezone = 21;
+    }
+    Data data = 3;
+}
+
+service Profile {
+    rpc GetUserProfile(GetProfileRequest) returns (ProfileResponse);
+    rpc UpdateUserProfile(UpdateProfileRequest) returns (ProfileResponse);
+}
