@@ -7,24 +7,27 @@ message RequestHeader {
 }
 
 message GetProfileRequest {
-    RequestHeader Header = 1;
+    RequestHeader header = 1;
 }
 
 message UpdateProfileRequest {
-    RequestHeader Header = 1;
-    string FirstName = 2;
-    string MiddleName = 3;
-    string LastName = 4;
-    string ContactEmail = 5;
-    string ContactMobile = 6;
-    string AddressStreet = 7;
-    string AddressCity = 8;
-    string AddressPostCode = 9;
-    string AddressState = 10;
-    string AddressCountry = 11;
-    string EmergencyContactFullName = 12;
-    string EmergencyContactRelationship = 13;
-    string EmergencyContactMobile = 14;
+    RequestHeader header = 1;
+    message Field {
+        string FirstName = 1;
+        string MiddleName = 2;
+        string LastName = 3;
+        string ContactEmail = 4;
+        string ContactMobile = 5;
+        string AddressStreet = 6;
+        string AddressCity = 7;
+        string AddressPostCode = 8;
+        string AddressState = 9;
+        string AddressCountry = 10;
+        string EmergencyContactFullName = 11;
+        string EmergencyContactRelationship = 12;
+        string EmergencyContactMobile = 13;
+    }
+    Field field = 2;
 }
 
 message ProfileResponse {
