@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-package permissionproto;
+package profileproto;
 
 message RequestHeader {
     string token = 1;
@@ -18,14 +18,15 @@ message UpdateProfileRequest {
         string LastName = 3;
         string ContactEmail = 4;
         string ContactMobile = 5;
-        string AddressStreet = 6;
-        string AddressCity = 7;
-        string AddressPostCode = 8;
-        string AddressState = 9;
-        string AddressCountry = 10;
-        string EmergencyContactFullName = 11;
-        string EmergencyContactRelationship = 12;
-        string EmergencyContactMobile = 13;
+        string ContactPhone = 6;
+        string AddressStreet = 7;
+        string AddressCity = 8;
+        string AddressPostCode = 9;
+        string AddressState = 10;
+        string AddressCountry = 11;
+        string EmergencyContactFullName = 12;
+        string EmergencyContactRelationship = 13;
+        string EmergencyContactMobile = 14;
     }
     Field field = 2;
 }
@@ -41,20 +42,21 @@ message ProfileResponse {
         string LastName = 5;
         string ContactEmail = 6;
         string ContactMobile = 7;
-        string AddressStreet = 8;
-        string AddressCity = 9;
-        string AddressPostCode = 10;
-        string AddressState = 11;
-        string AddressCountry = 12;
-        string EmployeeTittle = 13;
-        string EmployeeRole = 14;
-        repeated string Warehouses = 15;
-        string EmergencyContactFullName = 16;
-        string EmergencyContactRelationship = 17;
-        string EmergencyContactMobile = 18;
-        string Supervisor = 19;
-        string HiredDate = 20;
-        string Timezone = 21;
+        string ContactPhone = 8;
+        string AddressStreet = 9;
+        string AddressCity = 10;
+        string AddressPostCode = 11;
+        string AddressState = 12;
+        string AddressCountry = 13;
+        string EmployeeTittle = 14;
+        string EmployeeRole = 15;
+        repeated string Warehouses = 16;
+        string EmergencyContactFullName = 17;
+        string EmergencyContactRelationship = 18;
+        string EmergencyContactMobile = 19;
+        string Supervisor = 20;
+        string HiredDate = 21;
+        string Timezone = 22;
     }
     Data data = 3;
 }
